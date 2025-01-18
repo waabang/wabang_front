@@ -1,13 +1,15 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./index.module.css";
-import { usePathname } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './index.module.css';
+import { usePathname } from 'next/navigation';
+import MagicFormWidget from '../MagicFormWidget/MagicFormWidget';
+
 export default function Navbar() {
   const pathname = usePathname();
   const isHomeActive = !(
-    pathname.includes("reward") || pathname.includes("mypage")
+    pathname.includes('reward') || pathname.includes('mypage')
   );
   return (
     <div className={styles.navbar}>
@@ -36,14 +38,14 @@ export default function Navbar() {
           width={25}
           height={25}
           className={
-            pathname.includes("reward")
+            pathname.includes('reward')
               ? styles.navItemIconActive // 활성화 상태 아이콘
               : styles.navItemIcon // 비활성화 상태 아이콘
           }
         />
         <p
           className={
-            pathname.includes("reward")
+            pathname.includes('reward')
               ? styles.navItemTextActive // 활성화 상태 텍스트
               : styles.navItemText // 비활성화 상태 텍스트
           }
@@ -58,14 +60,14 @@ export default function Navbar() {
           width={25}
           height={25}
           className={
-            pathname.includes("mypage")
+            pathname.includes('mypage')
               ? styles.navItemIconActive // 활성화 상태 아이콘
               : styles.navItemIcon // 비활성화 상태 아이콘
           }
         />
         <p
           className={
-            pathname.includes("mypage")
+            pathname.includes('mypage')
               ? styles.navItemTextActive // 활성화 상태 텍스트
               : styles.navItemText // 비활성화 상태 텍스트
           }
@@ -73,6 +75,9 @@ export default function Navbar() {
           마이페이지
         </p>
       </Link>
+      <div>
+        <MagicFormWidget />
+      </div>
     </div>
   );
 }

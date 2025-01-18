@@ -1,7 +1,7 @@
 .container {
-  margin-bottom: 12%;
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 14%;
 }
 
 .mypage_title {
@@ -9,6 +9,7 @@
   font-size: 24px;
   font-weight: 600;
   margin: 20px 0 10px 5px;
+  padding-left: 10px;
 }
 
 .mypage_content {

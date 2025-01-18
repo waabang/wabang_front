@@ -11,20 +11,6 @@ export default function Mypage() {
       <div className={styles.mypage_title}>와방 성과</div>
       <div className={styles.mypage_content}>
         <div className={styles.mypage_block}>
-          <div className={styles.mypage_result}>{summary.region}</div>
-          <div className={styles.mypage_text}>
-            <Image
-              src={'/location.svg'}
-              width={15}
-              height={15}
-              style={{ marginRight: '4px' }}
-              alt="svg"
-            />
-            <div>지역</div>
-          </div>
-        </div>
-        <div className={styles.hr}></div>
-        <div className={styles.mypage_block}>
           <div className={styles.mypage_result}>{summary.success}</div>
           <div className={styles.mypage_text}>
             <Image

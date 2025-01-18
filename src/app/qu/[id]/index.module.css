@@ -12,7 +12,7 @@
   align-items: center;
   z-index: 1;
   cursor: pointer;
-  position: "fixed";
+  position: 'fixed';
 }
 /* 버튼 텍스트 스타일 */
 .buttonText {

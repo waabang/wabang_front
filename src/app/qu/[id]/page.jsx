@@ -1,21 +1,20 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./index.module.css";
-import { useState, useEffect } from "react";
-import SuccessModal from "../../components/basic/Success/Modal";
-import FailModal from "../../components/basic/Fail/Modal";
+'use client';
+import Image from 'next/image';
+import styles from './index.module.css';
+import { useState, useEffect } from 'react';
+import SuccessModal from '../../components/basic/Success/Modal';
+import FailModal from '../../components/basic/Fail/Modal';
 // 퀘스트
 export default function Page() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [isCorrect, setIsCorrect] = useState();
-  const answer = "제이";
+  const answer = '제이';
   const handleClick = () => {
     if (text.trim() === answer) {
-      console.log("정답");
+      console.log('정답');
       setIsCorrect(true);
     } else {
-      console.log("실패");
+      console.log('실패');
       setIsCorrect(false);
     }
   };
@@ -23,14 +22,14 @@ export default function Page() {
   return (
     <div
       style={{
-        display: "flex",
-        height: "93vh",
-        maxWidth: "800px",
-        margin: "0 auto",
-        flexDirection: "column",
-        alignItems: "center",
-        position: "relative",
-        backgroundColor: "#DCC7AF",
+        display: 'flex',
+        height: '93vh',
+        maxWidth: '800px',
+        margin: '0 auto',
+        flexDirection: 'column',
+        alignItems: 'center',
+        position: 'relative',
+        backgroundColor: '#DCC7AF',
       }}
     >
       <Image
@@ -47,22 +46,22 @@ export default function Page() {
         height={80}
         className={styles.Icon}
       />
-      <h1 style={{ fontSize: "40px", zIndex: "1" }}>퀴즈</h1>
-      <h3 style={{ marginTop: "0px", zIndex: "1", fontSize: "20px" }}>
+      <h1 style={{ fontSize: '40px', zIndex: '1' }}>퀴즈</h1>
+      <h3 style={{ marginTop: '0px', zIndex: '1', fontSize: '20px' }}>
         당신의 이름은 무엇인가요?
       </h3>
       <input
-        onChange={(e) => setText(e.target.value)}
+        onChange={e => setText(e.target.value)}
         value={text}
         style={{
-          border: "1px solid black",
-          borderRadius: "5px",
-          width: "65%",
-          height: "40px",
-          padding: "3px 15px",
-          marginTop: "10px",
-          marginBottom: "20px",
-          zIndex: "1",
+          border: '1px solid black',
+          borderRadius: '5px',
+          width: '65%',
+          height: '40px',
+          padding: '3px 15px',
+          marginTop: '10px',
+          marginBottom: '20px',
+          zIndex: '1',
         }}
         placeholder="답을 입력해주세요"
       />
