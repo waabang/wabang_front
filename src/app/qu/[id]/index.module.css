@@ -1,0 +1,41 @@
+/* 상자(chest) 이미지 스타일 */
+.Icon {
+  margin-top: 50px;
+  z-index: 1;
+}
+/* 버튼 링크 스타일 */
+.buttonLink {
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+  position: "fixed";
+  bottom: -140px;
+}
+/* 버튼 텍스트 스타일 */
+.buttonText {
+  position: absolute;
+  bottom: -1px;
+}
+/* 배경 이미지 스타일 */
+.modalBackground {
+  position: absolute;
+  bottom: 1;
+  width: 100%;
+  height: 100%;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}

@@ -81,6 +81,10 @@
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
+/* 상자(chest) 이미지 스타일 */
+.Icon {
+  position: absolute;
+  bottom: 95px;
 }
 
 /* 버튼 링크 스타일 (수평 중앙 정렬) */

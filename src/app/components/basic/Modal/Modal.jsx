@@ -15,6 +15,23 @@ export default function Modal({ type, onClose }) {
           width={260}
           height={260}
           className={styles.modalBackground}
+      {type === "chest" ? (
+        // 상자(chest) 이미지
+        <Image
+          src="/chest.svg"
+          alt="chest"
+          width={60}
+          height={60}
+          className={styles.Icon}
+        />
+      ) : (
+        // 물음표(question) 이미지
+        <Image
+          src="/question.svg"
+          alt="question"
+          width={60}
+          height={60}
+          className={styles.Icon}
         />
         <div className={styles.randMarkText}>{location.address}</div>
         <div className={styles.modalTitle}>{location.name}</div>
