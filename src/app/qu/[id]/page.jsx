@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import { useState, useEffect } from "react";
 import SuccessModal from "../../components/basic/Success/Modal";
+import FailModal from "../../components/basic/Fail/Modal";
 // 퀘스트
 export default function Page() {
   const [text, setText] = useState("");
@@ -18,14 +19,7 @@ export default function Page() {
       setIsCorrect(false);
     }
   };
-  useEffect(() => {
-    if (isCorrect === false) {
-      const timer = setTimeout(() => {
-        setIsCorrect(null);
-      }, 2000); // 원하는 시간(밀리초) 지정
-      return () => clearTimeout(timer);
-    }
-  }, [isCorrect]);
+
   return (
     <div
       style={{
@@ -70,12 +64,7 @@ export default function Page() {
         }}
         placeholder="답을 입력해주세요"
       />
-      {isCorrect === false && (
-        <p style={{ color: "red", zIndex: "1", margin: "0", fontSize: "17px" }}>
-          {" "}
-          틀렸어요!
-        </p>
-      )}
+
       <div className={styles.buttonLink} onClick={handleClick}>
         <Image src="/button.png" alt="button" width={100} height={50} />
         <p className={styles.buttonText}>확인</p>
@@ -86,11 +75,11 @@ export default function Page() {
           <SuccessModal />
         </div>
       )}
-      {/*  {isCorrect === false && (
+      {isCorrect === false && (
         <div className={styles.overlay}>
-          <FailModal />
+          <FailModal onClose={() => setIsCorrect(undefined)} />
         </div>
-      )} */}
+      )}
     </div>
   );
 }
