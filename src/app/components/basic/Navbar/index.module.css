@@ -1,0 +1,41 @@
+/* 전체 컨테이너 스타일 */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed; /* 화면에 고정 */
+  bottom: 0; /* 화면의 맨 아래로 이동 */
+  width: 100%;
+  height: 8%;
+  background-color: white;
+}
+
+/* 각 메뉴 아이템 컨테이너 */
+.navItem {
+  width: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  decoration: none;
+}
+
+/* 비활성화된 텍스트 스타일 */
+.navItemText {
+  font-size: 12px;
+  margin-top: 7px;
+  color: #aaaaaa;
+}
+/* 활성화된 텍스트 스타일 */
+.navItemTextActive {
+  font-size: 12px;
+  margin-top: 7px;
+  color: #f9d60a; /* 활성화 상태의 텍스트 색 */
+}
+/* 비활성화 아이콘 스타일 */
+.navItemIcon {
+  filter: grayscale(100%); /* 비활성화 상태의 아이콘 */
+}
+/* 활성화된 아이콘 스타일 */
+.navItemIconActive {
+  filter: none; /* 활성화 상태: 원래 색상 */
+}
