@@ -25,7 +25,7 @@ export default function Modal({ type }) {
           alt="chest"
           width={60}
           height={60}
-          className={styles.chestIcon}
+          className={styles.Icon}
         />
       ) : (
         // 물음표(question) 이미지
@@ -34,7 +34,7 @@ export default function Modal({ type }) {
           alt="question"
           width={60}
           height={60}
-          className={styles.chestIcon}
+          className={styles.Icon}
         />
       )}
 
