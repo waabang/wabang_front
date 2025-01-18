@@ -1,0 +1,49 @@
+/* Modal 전체 컨테이너 */
+.modalContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 배경 이미지 스타일 */
+.modalBackground {
+  width: 260px;
+  height: 260px;
+}
+
+/* 중앙 텍스트 스타일 */
+.modalText {
+  position: absolute;
+  width: 137px;
+  top: 70px;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* 상자(chest) 이미지 스타일 */
+.chestIcon {
+  position: absolute;
+  bottom: 95px;
+  color: black; /* 색상은 필요 없지만 유지 */
+}
+
+/* 버튼 링크 스타일 */
+.buttonLink {
+  position: absolute;
+  bottom: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+}
+
+/* 버튼 텍스트 스타일 */
+.buttonText {
+  position: absolute;
+  font-size: 12px;
+  color: black;
+  bottom: 28.5px;
+  left: 18px;
+}
