@@ -1,0 +1,77 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header_container {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #47484b;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.rewardContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgb(128, 128, 128);
+  border-radius: 12px;
+  padding: 3px 7px;
+}
+
+.reward {
+  color: white;
+  font-weight: 800;
+}
+.tContainer {
+  margin-bottom: 10px;
+}
+
+.tabContainer {
+  display: flex;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #0070f3;
+}
+
+/* 활성 탭 스타일 */
+.active {
+  border-bottom: 3px solid #0070f3;
+  color: #0070f3;
+  font-weight: 500;
+}
+
+.content_list {
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+}
+.item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 24px;
+}

@@ -12,17 +12,44 @@ export default function Mypage() {
       <div className={styles.mypage_content}>
         <div className={styles.mypage_block}>
           <div className={styles.mypage_result}>{summary.region}</div>
-          <div className={styles.mypage_text}>지역</div>
+          <div className={styles.mypage_text}>
+            <Image
+              src={'/location.svg'}
+              width={15}
+              height={15}
+              style={{ marginRight: '4px' }}
+              alt="svg"
+            />
+            <div>지역</div>
+          </div>
         </div>
         <div className={styles.hr}></div>
         <div className={styles.mypage_block}>
           <div className={styles.mypage_result}>{summary.success}</div>
-          <div className={styles.mypage_text}>성공</div>
+          <div className={styles.mypage_text}>
+            <Image
+              src={'/success.svg'}
+              width={18}
+              height={18}
+              style={{ marginRight: '4px' }}
+              alt="svg"
+            />
+            <div>성공</div>
+          </div>
         </div>
         <div className={styles.hr}></div>
         <div className={styles.mypage_block}>
           <div className={styles.mypage_result}>{summary.fail}</div>
-          <div className={styles.mypage_text}>실패</div>
+          <div className={styles.mypage_text}>
+            <Image
+              src={'/fail.svg'}
+              width={18}
+              height={18}
+              style={{ marginRight: '4px' }}
+              alt="svg"
+            />
+            <div>실패</div>
+          </div>
         </div>
       </div>
       <div>
@@ -41,9 +68,19 @@ export default function Mypage() {
                 <div className={styles.mypage_list_title}>{item.name}</div>
                 <div className={styles.mypage_address}>{item.address}</div>
                 <div className={styles.mypage_list_result}>
-                  <div className={styles.mypage_list_text}>성공</div>
+                  <div
+                    className={
+                      item.isSuccess
+                        ? styles.mypage_list_text_success
+                        : styles.mypage_list_text_fail
+                    }
+                  >
+                    {item.isSuccess ? '성공' : '실패'}
+                  </div>
                   <Image
-                    src={'/chest.svg'}
+                    src={
+                      item.type === 'question' ? '/question.svg' : '/chest.svg'
+                    }
                     width={30}
                     height={30}
                     alt="thumbnail"
