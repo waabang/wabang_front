@@ -1,0 +1,85 @@
+export const tabData = {
+  쇼핑: [
+    {
+      id: 1,
+      text: '쇼핑 아이템 1',
+      title: '경주 특산품 1',
+      description: '경주의 유명한 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 2,
+      text: '쇼핑 아이템 2',
+      title: '경주 특산품 2',
+      description: '경주의 전통적인 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 3,
+      text: '쇼핑 아이템 3',
+      title: '경주 특산품 3',
+      description: '경주에서만 구할 수 있는 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 4,
+      text: '쇼핑 아이템 4',
+      title: '경주 특산품 4',
+      description: '경주의 인기 있는 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 5,
+      text: '쇼핑 아이템 5',
+      title: '경주 특산품 5',
+      description: '경주의 전통과 역사가 담긴 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 6,
+      text: '쇼핑 아이템 6',
+      title: '경주 특산품 6',
+      description: '경주의 자연에서 온 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 7,
+      text: '쇼핑 아이템 7',
+      title: '경주 특산품 7',
+      description: '경주의 문화가 담긴 특산품입니다.',
+      thumbnail: '/chest.svg',
+    },
+  ],
+  문화: [
+    {
+      id: 11,
+      text: '문화 아이템 1',
+      title: '경주 문화 체험 1',
+      description: '경주의 전통 문화를 체험할 수 있는 프로그램입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 12,
+      text: '문화 아이템 2',
+      title: '경주 문화 체험 2',
+      description: '경주의 역사와 문화를 배울 수 있는 체험입니다.',
+      thumbnail: '/chest.svg',
+    },
+  ],
+  기타: [
+    {
+      id: 13,
+      text: '기타 아이템 1',
+      title: '경주 기타 상품 1',
+      description: '경주에서만 구할 수 있는 특별한 상품입니다.',
+      thumbnail: '/chest.svg',
+    },
+    {
+      id: 14,
+      text: '기타 아이템 2',
+      title: '경주 기타 상품 2',
+      description: '경주의 독특한 상품입니다.',
+      thumbnail: '/chest.svg',
+    },
+  ],
+};

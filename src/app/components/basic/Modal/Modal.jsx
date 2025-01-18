@@ -48,7 +48,7 @@ export default function Modal({ type, onClose }) {
           />
         )}
         {/* 버튼 */}
-        <Link href="/" className={styles.buttonLink}>
+        <Link href={`/qu/${location.id}`} className={styles.buttonLink}>
           <Image src="/button.svg" alt="button" width={115} height={35} />
           <p className={styles.buttonText}>열기!</p>
         </Link>

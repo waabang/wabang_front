@@ -8,9 +8,10 @@ export const resultData = [
     name: '건국대학교 새천년관',
     latitude: 37.540705,
     longitude: 127.073617,
-    type: 'box',
+    type: 'question',
     thumbnail: '/chest.svg',
     address: '서울특별시 광진구 능동로 120',
+    isSuccess: false,
   },
   {
     name: '고려대학교 안암캠퍼스',
@@ -19,6 +20,7 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 성북구 안암로 145',
+    isSuccess: false,
   },
   {
     name: '서울대학교 관악캠퍼스',
@@ -27,6 +29,7 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 관악구 관악로 1',
+    isSuccess: true,
   },
   {
     name: '성균관대학교 서울캠퍼스',
@@ -35,6 +38,7 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 종로구 성균관로 25-2',
+    isSuccess: true,
   },
   {
     name: '연세대학교 신촌캠퍼스',
@@ -43,6 +47,7 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 서대문구 연세로 50',
+    isSuccess: false,
   },
   {
     name: '이화여자대학교',
@@ -51,6 +56,7 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 서대문구 이화여대길 52',
+    isSuccess: true,
   },
   {
     name: '한양대학교 서울캠퍼스',
@@ -59,5 +65,6 @@ export const resultData = [
     type: 'box',
     thumbnail: '/chest.svg',
     address: '서울특별시 성동구 왕십리로 222',
+    isSuccess: true,
   },
 ];

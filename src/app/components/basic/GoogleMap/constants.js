@@ -1,5 +1,6 @@
 export const locations = [
   {
+    id: 1,
     name: '건국대학교 상허기념도서관',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.540705,
@@ -7,6 +8,7 @@ export const locations = [
     type: 'box',
   },
   {
+    id: 2,
     name: '건국대학교 새천년관',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.541123,
@@ -14,6 +16,7 @@ export const locations = [
     type: 'box',
   },
   {
+    id: 3,
     name: '건국대학교 법학관',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.541789,
@@ -21,6 +24,7 @@ export const locations = [
     type: 'box',
   },
   {
+    id: 4,
     name: '건국대학교 경영관',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.542345,
@@ -28,6 +32,7 @@ export const locations = [
     type: 'box',
   },
   {
+    id: 5,
     name: '건국대학교 공학관',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.54321,
@@ -35,6 +40,7 @@ export const locations = [
     type: 'box',
   },
   {
+    id: 6,
     name: '건국대학교 학생회관은 어디에 있나요?',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.544321,
@@ -42,6 +48,7 @@ export const locations = [
     type: 'question',
   },
   {
+    id: 7,
     name: '건국대학교 예술관은 어디에 있나요?',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.545432,
@@ -49,6 +56,7 @@ export const locations = [
     type: 'question',
   },
   {
+    id: 8,
     name: '건국대학교 체육관은 어디에 있나요?',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.546543,
@@ -56,6 +64,7 @@ export const locations = [
     type: 'question',
   },
   {
+    id: 9,
     name: '건국대학교 산학협력관은 어디에 있나요?',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.547654,
@@ -63,6 +72,7 @@ export const locations = [
     type: 'question',
   },
   {
+    id: 10,
     name: '건국대학교 기숙사는 어디에 있나요?',
     address: '서울특별시 광진구 능동로 120',
     latitude: 37.548765,
