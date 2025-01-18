@@ -26,7 +26,9 @@ export default function Page() {
     <div
       style={{
         display: "flex",
-        height: "780px",
+        height: "93vh",
+        maxWidth: "800px",
+        margin: "0 auto",
         flexDirection: "column",
         alignItems: "center",
         position: "relative",

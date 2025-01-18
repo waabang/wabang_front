@@ -24,7 +24,9 @@ export default function Page() {
     <div
       style={{
         display: "flex",
-        height: "780px",
+        height: "93vh",
+        maxWidth: "800px",
+        margin: "0 auto",
         flexDirection: "column",
         alignItems: "center",
         position: "relative",
@@ -46,7 +48,7 @@ export default function Page() {
         className={styles.Icon}
       />
       <h1 style={{ fontSize: "40px", zIndex: "1" }}>퀴즈</h1>
-      <h3 style={{ marginTop: "50px", zIndex: "1", fontSize: "20px" }}>
+      <h3 style={{ marginTop: "0px", zIndex: "1", fontSize: "20px" }}>
         당신의 이름은 무엇인가요?
       </h3>
       <input
@@ -58,7 +60,7 @@ export default function Page() {
           width: "65%",
           height: "40px",
           padding: "3px 15px",
-          marginTop: "100px",
+          marginTop: "10px",
           marginBottom: "20px",
           zIndex: "1",
         }}

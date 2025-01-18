@@ -21,7 +21,6 @@
   z-index: 1;
   cursor: pointer;
   position: "fixed";
-  bottom: -105px;
 }
 /* 버튼 텍스트 스타일 */
 .buttonText {
