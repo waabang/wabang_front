@@ -1,16 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './index.module.css';
-import { tabData } from './constants';
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./index.module.css";
+import { tabData } from "./constants";
+import PurchaseModal from "../components/basic/Purchase/Purchase";
 
 function Reward() {
   // 기본 활성 탭은 '쇼핑'
-  const [activeTab, setActiveTab] = useState('쇼핑');
-
-  const handleTabClick = tab => {
+  const [activeTab, setActiveTab] = useState("쇼핑");
+  const [isCorrect, setIsCorrect] = useState(null);
+  const handleTabClick = (tab) => {
     setActiveTab(tab);
+  };
+  const handleItemClick = () => {
+    setIsCorrect(true);
+    console.log(isCorrect);
   };
 
   return (
@@ -29,7 +34,7 @@ function Reward() {
             {Object.keys(tabData).map((tab, index) => (
               <div
                 key={index}
-                className={`${styles.tab} ${activeTab === tab ? styles.active : ''}`}
+                className={`${styles.tab} ${activeTab === tab ? styles.active : ""}`}
                 onClick={() => handleTabClick(tab)}
               >
                 {tab}
@@ -40,8 +45,8 @@ function Reward() {
       </div>
 
       <div className={styles.content_list}>
-        {tabData[activeTab].map(item => (
-          <div key={item.id} className={styles.item}>
+        {tabData[activeTab].map((item) => (
+          <div key={item.id} className={styles.item} onClick={handleItemClick}>
             <div className={styles.thumbnail}>
               <Image
                 src={item.thumbnail}
@@ -57,6 +62,11 @@ function Reward() {
           </div>
         ))}
       </div>
+      {isCorrect === true && (
+        <div className={styles.overlay}>
+          <PurchaseModal onClose={() => setIsCorrect(undefined)} />
+        </div>
+      )}
     </div>
   );
 }
