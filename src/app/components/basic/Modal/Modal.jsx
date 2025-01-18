@@ -1,17 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./index.module.css";
-import { locations } from "../GoogleMap/constants";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './index.module.css';
+import { locations } from '../GoogleMap/constants';
 
 export default function Modal({ type, onClose }) {
-  const location = locations.find((loc) => loc.type === type);
+  const location = locations.find(loc => loc.type === type);
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div
-        className={styles.modalContainer}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className={styles.modalContainer} onClick={e => e.stopPropagation()}>
         <Image
           src="/modalBackground.png"
           alt="modal background"
@@ -22,7 +19,7 @@ export default function Modal({ type, onClose }) {
         <div className={styles.randMarkText}>{location.address}</div>
         <div className={styles.modalTitle}>{location.name}</div>
         <div className={styles.modalText}>
-          {type === "box" ? (
+          {type === 'box' ? (
             <div>
               상자를 찾았어요! <br /> 열어보고 보상을 받으세요
             </div>
@@ -33,7 +30,7 @@ export default function Modal({ type, onClose }) {
           )}
         </div>
         {/* 마커의 타입에 따른 아이콘 표시 */}
-        {type === "box" ? (
+        {type === 'box' ? (
           <Image
             src="/chest.svg"
             alt="chest"
@@ -52,7 +49,7 @@ export default function Modal({ type, onClose }) {
         )}
         {/* 버튼 */}
         <Link
-          href={type === "box" ? `/ch/${location.id}` : `/qu/${location.id}`}
+          href={type === 'box' ? `/ch/${location.id}` : `/qu/${location.id}`}
           className={styles.buttonLink}
         >
           <Image src="/button.svg" alt="button" width={115} height={35} />

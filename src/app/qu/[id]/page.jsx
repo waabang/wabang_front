@@ -8,7 +8,7 @@ import FailModal from '../../components/basic/Fail/Modal';
 export default function Page() {
   const [text, setText] = useState('');
   const [isCorrect, setIsCorrect] = useState();
-  const answer = '제이';
+  const answer = '31호';
   const handleClick = () => {
     if (text.trim() === answer) {
       console.log('정답');
@@ -48,7 +48,7 @@ export default function Page() {
       />
       <h1 style={{ fontSize: '40px', zIndex: '1' }}>퀴즈</h1>
       <h3 style={{ marginTop: '0px', zIndex: '1', fontSize: '20px' }}>
-        당신의 이름은 무엇인가요?
+        🤔 첨성대는 대한민국 국보 제 몇 호일까요?
       </h3>
       <input
         onChange={e => setText(e.target.value)}

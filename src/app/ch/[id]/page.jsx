@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import styles from "./index.module.css";
-import SuccessModal from "../../components/basic/Success/Modal";
-import { useState, useEffect, useRef } from "react";
+'use client';
+import Image from 'next/image';
+import styles from './index.module.css';
+import SuccessModal from '../../components/basic/Success/Modal';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Page() {
   const imgRef = useRef(null);
@@ -10,10 +10,13 @@ export default function Page() {
   const [isCorrect, setIsCorrect] = useState(null);
 
   // 사진이 일치하는 지 검사
-  const handleFileChange = (e) => {
+  const handleFileChange = e => {
     if (e.target.files && e.target.files[0]) {
-      setPreview(URL.createObjectURL(e.target.files[0]));
-      console.log(preview);
+      const file = e.target.files[0];
+      const fileURL = URL.createObjectURL(e.target.files[0]);
+      setPreview(fileURL);
+      console.log('선택한 이미지 URL:', fileURL);
+      setIsCorrect(true);
     }
   };
   const handleDivClick = () => {
@@ -25,14 +28,14 @@ export default function Page() {
   return (
     <div
       style={{
-        display: "flex",
-        height: "93vh",
-        maxWidth: "800px",
-        margin: "0 auto",
-        flexDirection: "column",
-        alignItems: "center",
-        position: "relative",
-        backgroundColor: "#DCC7AF",
+        display: 'flex',
+        height: '93vh',
+        maxWidth: '800px',
+        margin: '0 auto',
+        flexDirection: 'column',
+        alignItems: 'center',
+        position: 'relative',
+        backgroundColor: '#DCC7AF',
       }}
     >
       <Image
@@ -49,31 +52,31 @@ export default function Page() {
         height={80}
         className={styles.Icon}
       />
-      <h1 style={{ fontSize: "40px", zIndex: "1", marginTop: "5px" }}>
+      <h1 style={{ fontSize: '40px', zIndex: '1', marginTop: '5px' }}>
         퀘스트
       </h1>
-      <p style={{ zIndex: "1", fontSize: "18px", margin: "0" }}>
-        경복궁 사진을 찍어주세요
+      <p style={{ zIndex: '1', fontSize: '18px', margin: '0' }}>
+        백률사 사진을 찍어주세요!
       </p>
       <div
         style={{
-          border: "1px solid black",
-          width: "270px",
-          height: "270px",
-          zIndex: "1",
-          marginTop: "30px",
-          marginBottom: "20px",
-          borderRadius: "5px",
-          border: "2px solid gray",
+          border: '1px solid black',
+          width: '270px',
+          height: '270px',
+          zIndex: '1',
+          marginTop: '30px',
+          marginBottom: '20px',
+          borderRadius: '5px',
+          border: '2px solid gray',
         }}
         onClick={handleDivClick}
       >
         <Image
-          src="/dog.jpg"
+          src="/images.jpeg"
           alt="Example"
           width={270}
           height={270}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
 
@@ -81,7 +84,7 @@ export default function Page() {
         ref={imgRef}
         type="file"
         accept="image/*"
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
         onChange={handleFileChange}
       />
 

@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useState, useRef } from 'react';
 import styles from './index.module.css';
 import { locations } from './constants';
@@ -25,43 +23,43 @@ function loadGoogleMaps(apiKey) {
   return googleMapsPromise;
 }
 
-function calculateDistance(lat1, lng1, lat2, lng2) {
-  const R = 6371;
-  const dLat = deg2rad(lat2 - lat1);
-  const dLng = deg2rad(lng2 - lng1);
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(deg2rad(lat1)) *
-      Math.cos(deg2rad(lat2)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-function deg2rad(deg) {
-  return deg * (Math.PI / 180);
-}
-
 export default function GoogleMap() {
   const [modalData, setModalData] = useState({ open: false, type: null });
   const mapRef = useRef(null);
-  const userCoordinatesRef = useRef(null);
+  const userMarkerRef = useRef(null);
 
   const handleCenterOnUser = () => {
-    if (mapRef.current && userCoordinatesRef.current) {
-      mapRef.current.setCenter(userCoordinatesRef.current);
-      mapRef.current.setZoom(16);
-    } else {
-      alert('사용자 위치를 확인 중입니다. 잠시 후 다시 시도해주세요.');
+    if (mapRef.current) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const userPos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          mapRef.current.setCenter(userPos);
+          mapRef.current.setZoom(16);
+
+          if (userMarkerRef.current) {
+            userMarkerRef.current.setPosition(userPos);
+          } else {
+            userMarkerRef.current = new google.maps.Marker({
+              position: userPos,
+              map: mapRef.current,
+              title: 'Your Location',
+            });
+          }
+        },
+        () => {
+          alert('현재 위치를 가져올 수 없습니다.');
+        },
+      );
     }
   };
 
   const handleLocationChange = ({ latitude, longitude }) => {
     if (mapRef.current) {
       mapRef.current.setCenter({ lat: latitude, lng: longitude });
-      mapRef.current.setZoom(14);
-      console.log(`지도 중심 변경: 위도 ${latitude}, 경도 ${longitude}`);
+      mapRef.current.setZoom(16);
     }
   };
 
@@ -85,32 +83,29 @@ export default function GoogleMap() {
             strictBounds: true,
           },
         });
+
         mapRef.current = map;
 
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            position => {
-              const pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              };
-              userCoordinatesRef.current = pos;
-              map.setCenter(pos);
-              new google.maps.marker.AdvancedMarkerView({
-                map,
-                position: pos,
-                title: 'Your location',
-              });
-            },
-            () => {
-              console.log('위치 정보 가져오기 실패');
-            },
-          );
-        }
+        locations.slice(0, 10).forEach(location => {
+          const marker = new google.maps.Marker({
+            position: { lat: location.latitude, lng: location.longitude },
+            map,
+            title: location.name,
+            icon: location.type === 'box' ? '/chest.png' : '/question.png',
+          });
+
+          marker.addListener('click', () => {
+            setModalData({ open: true, type: location.type });
+          });
+        });
       })
       .catch(err => {
         console.error('Google Maps API 로딩 실패', err);
       });
+
+    return () => {
+      delete window.initMap;
+    };
   }, []);
 
   return (
