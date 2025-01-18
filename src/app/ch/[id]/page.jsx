@@ -1,37 +1,98 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./index.module.css";
-import { useState, useEffect } from "react";
 import SuccessModal from "../../components/basic/Success/Modal";
-// 퀘스트
+import { useState, useEffect, useRef } from "react";
+
 export default function Page() {
-  const [text, setText] = useState("");
-  const [isCorrect, setIsCorrect] = useState();
-  const answer = "제이";
-  const handleClick = () => {
-    if (text.trim() === answer) {
-      console.log("정답");
-      setIsCorrect(true);
-    } else {
-      console.log("실패");
-      setIsCorrect(false);
+  const imgRef = useRef(null);
+  const [preview, setPreview] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
+
+  // 사진이 일치하는 지 검사
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setPreview(URL.createObjectURL(e.target.files[0]));
+      console.log(preview);
     }
   };
-  useEffect(() => {
-    if (isCorrect === false) {
-      const timer = setTimeout(() => {
-        setIsCorrect(null);
-      }, 2000); // 원하는 시간(밀리초) 지정
-      return () => clearTimeout(timer);
+  const handleDivClick = () => {
+    if (imgRef.current) {
+      imgRef.current.click();
     }
-  }, [isCorrect]);
+  };
+
   return (
-    <div>
-      <h1>이름</h1>
-      <h3>주소</h3>
-      <p>퀘스트</p>
-      <input />
+    <div
+      style={{
+        display: "flex",
+        height: "780px",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "relative",
+        backgroundColor: "#DCC7AF",
+      }}
+    >
+      <Image
+        src="/modalBackground.png"
+        alt="modal"
+        width={260}
+        height={260}
+        className={styles.modalBackground}
+      />
+      <Image
+        src="/chest.svg"
+        alt="chest"
+        width={80}
+        height={80}
+        className={styles.Icon}
+      />
+      <p style={{ zIndex: "1", fontSize: "18px" }}>경복궁 사진을 찍어주세요</p>
+      <div
+        style={{
+          border: "1px solid black",
+          width: "270px",
+          height: "270px",
+          zIndex: "1",
+          marginTop: "30px",
+          marginBottom: "20px",
+          borderRadius: "5px",
+          border: "2px solid gray",
+        }}
+        onClick={handleDivClick}
+      >
+        <Image
+          src="/dog.jpg"
+          alt="Example"
+          width={270}
+          height={270}
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+
+      <input
+        ref={imgRef}
+        type="file"
+        accept="image/*"
+        style={{ display: "none" }}
+        onChange={handleFileChange}
+      />
+
+      <div className={styles.buttonLink} onClick={handleDivClick}>
+        <Image src="/button.png" alt="button" width={130} height={60} />
+        <p className={styles.buttonText}>인증하기</p>
+      </div>
+
+      {isCorrect === true && (
+        <div className={styles.overlay}>
+          <SuccessModal />
+        </div>
+      )}
+      {isCorrect === false && (
+        <div className={styles.overlay}>
+          <FailModal onClose={() => setIsCorrect(undefined)} />
+        </div>
+      )}
     </div>
   );
 }

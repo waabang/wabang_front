@@ -1,6 +1,6 @@
 /* 상자(chest) 이미지 스타일 */
 .Icon {
-  margin-top: 100px;
+  margin-top: 50px;
   z-index: 1;
 }
 /* 버튼 링크 스타일 */
@@ -12,7 +12,8 @@
   align-items: center;
   z-index: 1;
   cursor: pointer;
-  position: 'fixed';
+  position: "fixed";
+  bottom: -155px;
 }
 /* 버튼 텍스트 스타일 */
 .buttonText {
