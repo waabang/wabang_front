@@ -49,7 +49,12 @@ export default function Page() {
         height={80}
         className={styles.Icon}
       />
-      <p style={{ zIndex: "1", fontSize: "18px" }}>경복궁 사진을 찍어주세요</p>
+      <h1 style={{ fontSize: "40px", zIndex: "1", marginTop: "5px" }}>
+        퀘스트
+      </h1>
+      <p style={{ zIndex: "1", fontSize: "18px", margin: "0" }}>
+        경복궁 사진을 찍어주세요
+      </p>
       <div
         style={{
           border: "1px solid black",
