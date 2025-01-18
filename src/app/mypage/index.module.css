@@ -1,0 +1,98 @@
+.container {
+  margin-bottom: 12%;
+}
+
+.mypage_title {
+  color: #47484b;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0 10px 5px;
+}
+
+.mypage_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90px;
+  background-color: #f7f7f8;
+  border-radius: 10px;
+  border: 1px solid #e0e0e2;
+}
+
+.mypage_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 8px;
+}
+
+.hr {
+  width: 1px;
+  height: 50px;
+  background-color: #e0e0e0;
+}
+
+.mypage_result {
+  color: #47484b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mypage_text {
+  color: #858688;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.mypage_list_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 8px;
+  padding: 20px;
+}
+
+.mypage_list {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  border: 1px solid #ddf1ff;
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+
+.mypage_list_text_container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mypage_list_title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mypage_address {
+  font-size: 14px;
+  font-weight: 400;
+  color: #47484b;
+}
+
+.mypage_list_text {
+  color: #32ade6;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  background-color: rgba(0, 195, 255, 0.3);
+  width: 30px;
+  padding: 3px 5px 3px 5px;
+  border-radius: 8px;
+}
+
+.mypage_list_result {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}

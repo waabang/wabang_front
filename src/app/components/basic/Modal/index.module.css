@@ -1,49 +1,106 @@
-/* Modal 전체 컨테이너 */
-.modalContainer {
-  width: 100%;
+/* 오버레이: 화면 전체를 덮으며 모달을 중앙에 배치 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
   display: flex;
   justify-content: center;
+  align-items: center;
+  z-index: 999; /* 다른 요소 위에 표시 */
+}
+
+/* 모달 전체 컨테이너: 배경 이미지와 동일한 크기를 유지 */
+.modalContainer {
   position: relative;
+  width: 400px; /* 배경 이미지 너비 */
+  height: 400px; /* 배경 이미지 높이 */
 }
 
 /* 배경 이미지 스타일 */
 .modalBackground {
-  width: 260px;
-  height: 260px;
+  width: 400px;
+  height: 400px;
 }
 
-/* 중앙 텍스트 스타일 */
+/* 중앙 텍스트 스타일 (수평 중앙 정렬) */
+.locationText {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black; /* 텍스트를 흰색으로 변경 */
+  background-color: rgba(255, 234, 0.3); /* 배경에 오파시티 적용 */
+  padding: 7px;
+  font-weight: bold;
+  border-radius: 5px; /* 뱃지처럼 모서리를 둥글게 */
+}
+
+.randMarkText {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  width: 300px;
+}
+
+.modalTitle {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-size: 27px;
+  font-weight: bold;
+  width: 300px;
+}
+
 .modalText {
   position: absolute;
-  width: 137px;
-  top: 70px;
-  color: black;
-  font-size: 12px;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  width: 300px;
 }
 
-/* 상자(chest) 이미지 스타일 */
+/* 상자(chest) 혹은 물음표 아이콘 스타일 (수평 중앙 정렬) */
 .chestIcon {
   position: absolute;
-  bottom: 95px;
-  color: black; /* 색상은 필요 없지만 유지 */
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* 버튼 링크 스타일 */
+/* 버튼 링크 스타일 (수평 중앙 정렬) */
 .buttonLink {
   position: absolute;
-  bottom: 38px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+  text-decoration: none;
 }
 
-/* 버튼 텍스트 스타일 */
+/* 버튼 텍스트 스타일 (수평 중앙 정렬) */
 .buttonText {
   position: absolute;
-  font-size: 12px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
   color: black;
-  bottom: 28.5px;
-  left: 18px;
 }

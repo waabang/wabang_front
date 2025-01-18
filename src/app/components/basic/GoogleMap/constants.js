@@ -1,12 +1,4 @@
-export interface Location {
-  name: string;
-  address: string;
-  latitude: number;
-  longitude: number;
-  type: 'box' | 'question';
-}
-
-export const locations: Location[] = [
+export const locations = [
   {
     name: '건국대학교 상허기념도서관',
     address: '서울특별시 광진구 능동로 120',
